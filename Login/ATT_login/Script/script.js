@@ -1,27 +1,31 @@
 var usuario = {
-    nome: "a",
-    senha: "a"
+    nome: "Adm",
+    senha: "adm"
 }
 
-function salvarDados(){
+function login(){
 
-    let nome = document.getElementById("nome").value;
-    let senha = document.getElementById("senha").value;
-    console.log(nome)
-    if(usuario.nome == nome && usuario.senha == senha){
-        console.log("oi")
+    var nome = document.getElementById("nome").value;
+    var senha = document.getElementById("senha").value;
+
+    var cadastrando = {
+        nome: nome,
+        senha: senha
+    }
+    if(cadastrando.nome && cadastrando.senha){
         if(cadastrando.nome == usuario.nome){
             if(cadastrando.senha == usuario.senha){
-            location.replace("entrado.html");
+                location.replace("entrado.html");
             }
             else{
-                alert("Senha incorreta.");
+                alert("Senha incorreta");
             }
         }
         else{
-            alert("Usúario incorreto.");
+            alert("Usuário não encontrado");
         }
-    }else if (usuario.nome == "" && usuario.senha == ""){
-        alert("Preencha os campos.")
+    }
+    else{
+        alert("Preencha os campos")
     }
 }
